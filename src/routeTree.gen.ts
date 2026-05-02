@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UslugiRouteImport } from './routes/uslugi'
+import { Route as RealizacjeRouteImport } from './routes/realizacje'
 import { Route as ONasRouteImport } from './routes/o-nas'
 import { Route as IndexRouteImport } from './routes/index'
 
 const UslugiRoute = UslugiRouteImport.update({
   id: '/uslugi',
   path: '/uslugi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RealizacjeRoute = RealizacjeRouteImport.update({
+  id: '/realizacje',
+  path: '/realizacje',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ONasRoute = ONasRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/o-nas': typeof ONasRoute
+  '/realizacje': typeof RealizacjeRoute
   '/uslugi': typeof UslugiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/o-nas': typeof ONasRoute
+  '/realizacje': typeof RealizacjeRoute
   '/uslugi': typeof UslugiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/o-nas': typeof ONasRoute
+  '/realizacje': typeof RealizacjeRoute
   '/uslugi': typeof UslugiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/o-nas' | '/uslugi'
+  fullPaths: '/' | '/o-nas' | '/realizacje' | '/uslugi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/o-nas' | '/uslugi'
-  id: '__root__' | '/' | '/o-nas' | '/uslugi'
+  to: '/' | '/o-nas' | '/realizacje' | '/uslugi'
+  id: '__root__' | '/' | '/o-nas' | '/realizacje' | '/uslugi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ONasRoute: typeof ONasRoute
+  RealizacjeRoute: typeof RealizacjeRoute
   UslugiRoute: typeof UslugiRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/uslugi'
       fullPath: '/uslugi'
       preLoaderRoute: typeof UslugiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/realizacje': {
+      id: '/realizacje'
+      path: '/realizacje'
+      fullPath: '/realizacje'
+      preLoaderRoute: typeof RealizacjeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-nas': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ONasRoute: ONasRoute,
+  RealizacjeRoute: RealizacjeRoute,
   UslugiRoute: UslugiRoute,
 }
 export const routeTree = rootRouteImport
