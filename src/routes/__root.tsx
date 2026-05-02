@@ -32,11 +32,15 @@ export const Route = createRootRoute({
       { title: "Mativo Studio — Strony internetowe, SEO i Marketing" },
       { name: "description", content: "Mativo Studio tworzy nowoczesne strony internetowe, kampanie SEO i marketing, które przyciągają klientów i zwiększają sprzedaż." },
       { name: "author", content: "Mativo Studio" },
-      { property: "og:title", content: "Mativo Studio — Premium Digital Agency" },
-      { property: "og:description", content: "Strony internetowe, SEO, Social Media i Reklamy — kompleksowa obsługa Twojej firmy online." },
+      { property: "og:title", content: "Mativo Studio — Strony internetowe, SEO i Marketing" },
+      { property: "og:description", content: "Mativo Studio tworzy nowoczesne strony internetowe, kampanie SEO i marketing, które przyciągają klientów i zwiększają sprzedaż." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@MativoStudio" },
+      { name: "twitter:title", content: "Mativo Studio — Strony internetowe, SEO i Marketing" },
+      { name: "twitter:description", content: "Mativo Studio tworzy nowoczesne strony internetowe, kampanie SEO i marketing, które przyciągają klientów i zwiększają sprzedaż." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5ccb6fb1-b65d-4a1a-a77a-58e910ca1a39/id-preview-9671fd91--8596505d-f930-4189-bf1b-37ea7f76fcbc.lovable.app-1777741465360.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5ccb6fb1-b65d-4a1a-a77a-58e910ca1a39/id-preview-9671fd91--8596505d-f930-4189-bf1b-37ea7f76fcbc.lovable.app-1777741465360.png" },
     ],
     links: [
       {
