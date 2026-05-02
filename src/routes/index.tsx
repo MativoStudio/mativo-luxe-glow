@@ -29,33 +29,92 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative min-h-[88vh] flex items-center">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         {/* Plexus right */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[65%] pointer-events-auto">
-          <Plexus className="w-full h-full opacity-90" />
-          <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 35%, transparent 100%)" }} />
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[70%] pointer-events-auto">
+          <Plexus className="w-full h-full opacity-95" />
+          <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 40%, transparent 100%)" }} />
+        </div>
+
+        {/* Floating glow orb */}
+        <div className="absolute top-1/3 right-[15%] w-72 h-72 rounded-full pointer-events-none animate-float" style={{ background: "radial-gradient(circle, oklch(0.6 0.28 285 / 0.4), transparent 65%)", filter: "blur(40px)" }} />
+
+        {/* Decorative rotating ring */}
+        <div className="hidden lg:block absolute top-24 right-24 w-40 h-40 pointer-events-none animate-spin-slow opacity-40">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" stroke="url(#ringGrad)" strokeWidth="0.5" strokeDasharray="2 4" />
+            <defs>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="100" y2="100">
+                <stop offset="0%" stopColor="oklch(0.7 0.27 285)" />
+                <stop offset="100%" stopColor="oklch(0.6 0.27 240)" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full glass animate-fade-up">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
+                <span className="relative rounded-full h-2 w-2 bg-primary" />
+              </span>
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-foreground/80">PRZYJMUJEMY PROJEKTY 2026</span>
+            </div>
             <p className="text-xs font-semibold tracking-[0.35em] text-primary mb-6 animate-fade-up">
               NOWOCZESNE ROZWIĄZANIA DLA FIRM
             </p>
             <h1
-              className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight animate-fade-up"
+              className="text-6xl md:text-7xl lg:text-9xl font-bold leading-[0.9] tracking-tight animate-fade-up text-glow"
               style={{ fontFamily: "'Space Grotesk', sans-serif", animationDelay: "80ms" }}
             >
-              Mativo <span className="text-gradient-primary">Studio</span>
+              Mativo<br /><span className="text-gradient-primary">Studio</span>
             </h1>
-            <div className="mt-6 h-1 w-20 bg-gradient-primary rounded-full animate-fade-up" style={{ animationDelay: "160ms" }} />
-            <p className="mt-7 text-base md:text-lg text-muted-foreground max-w-md leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
-              Tworzymy strony internetowe i marketing, który przyciąga klientów i zwiększa sprzedaż.
+            <div className="mt-8 h-[2px] w-24 bg-gradient-primary rounded-full animate-fade-up glow" style={{ animationDelay: "160ms" }} />
+            <p className="mt-8 text-base md:text-xl text-muted-foreground max-w-xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
+              Tworzymy <span className="text-foreground font-medium">strony internetowe</span> i <span className="text-foreground font-medium">marketing</span>, który przyciąga klientów i zwiększa sprzedaż.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
               <CTAButton to="/kontakt">DARMOWA WYCENA</CTAButton>
               <CTAButton to="/uslugi" variant="ghost">NASZE USŁUGI</CTAButton>
             </div>
+
+            {/* Mini stats */}
+            <div className="mt-16 flex flex-wrap gap-10 animate-fade-up" style={{ animationDelay: "420ms" }}>
+              {[
+                { v: "50+", k: "Projektów" },
+                { v: "98%", k: "Zadowolonych" },
+                { v: "5★", k: "Ocena Google" },
+              ].map((s) => (
+                <div key={s.k} className="flex flex-col">
+                  <span className="text-3xl md:text-4xl font-bold text-gradient-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.v}</span>
+                  <span className="text-[10px] tracking-[0.3em] text-muted-foreground mt-1">{s.k.toUpperCase()}</span>
+                </div>
+              ))}
+            </div>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 animate-fade-up" style={{ animationDelay: "600ms" }}>
+          <span className="text-[10px] tracking-[0.3em] text-muted-foreground">SCROLL</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
+        </div>
+      </section>
+
+      {/* MARQUEE */}
+      <section className="relative py-10 border-y border-border overflow-hidden bg-background/40">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...Array(2)].map((_, dup) => (
+            <div key={dup} className="flex items-center gap-16 px-8">
+              {["WEB DESIGN", "SEO", "BRANDING", "MARKETING", "SOCIAL MEDIA", "REKLAMA GOOGLE", "ANALITYKA", "E-COMMERCE"].map((t) => (
+                <div key={t + dup} className="flex items-center gap-16">
+                  <span className="text-3xl md:text-5xl font-bold tracking-tight text-foreground/30 hover:text-gradient-primary transition-colors" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t}</span>
+                  <span className="text-primary text-2xl">✦</span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -78,15 +137,16 @@ function Index() {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="group relative glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-primary/60 reveal"
+                className="group relative glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-primary/60 reveal overflow-hidden"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
+                <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl" style={{ background: "var(--gradient-primary)" }} />
                 <div className="relative w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-secondary/60 border border-border group-hover:glow transition-all">
                   <s.icon className="h-6 w-6 text-primary-glow" />
                   <div className="absolute inset-0 rounded-xl bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity blur-xl" />
                 </div>
-                <h3 className="text-lg font-semibold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <h3 className="relative text-lg font-semibold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.title}</h3>
+                <p className="relative text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 <div className="mt-8 w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
                   <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
