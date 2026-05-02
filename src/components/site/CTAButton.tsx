@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-type Props = { to: string; children: React.ReactNode; variant?: "primary" | "ghost"; className?: string };
+type Props = { to: "/" | "/o-nas" | "/uslugi" | "/realizacje" | "/cennik" | "/kontakt"; children: React.ReactNode; variant?: "primary" | "ghost"; className?: string };
 
 export function CTAButton({ to, children, variant = "primary", className = "" }: Props) {
   if (variant === "primary") {
     return (
       <Link
-        to={to as string}
+        to={to}
         className={`group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-primary text-primary-foreground text-xs font-semibold tracking-[0.2em] overflow-hidden transition-all hover:scale-[1.03] animate-glow-pulse ${className}`}
       >
         <span className="relative z-10">{children}</span>
@@ -18,7 +18,7 @@ export function CTAButton({ to, children, variant = "primary", className = "" }:
   }
   return (
     <Link
-      to={to as string}
+      to={to}
       className={`group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border bg-secondary/30 backdrop-blur-md text-xs font-semibold tracking-[0.2em] hover:border-primary hover:bg-secondary/50 transition-all ${className}`}
     >
       {children}
