@@ -117,7 +117,7 @@ function Index() {
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, dup) => (
             <div key={dup} className="flex items-center gap-16 px-8">
-              {["WEB DESIGN", "SEO", "BRANDING", "MARKETING", "SOCIAL MEDIA", "REKLAMA GOOGLE", "ANALITYKA", "E-COMMERCE"].map((t) => (
+              {["WEB DESIGN", "SEO", "REKLAMA GOOGLE", "ANALITYKA", "E-COMMERCE"].map((t) => (
                 <div key={t + dup} className="flex items-center gap-16">
                   <span className="text-3xl md:text-5xl font-bold tracking-tight text-foreground/30 hover:text-gradient-primary transition-colors" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t}</span>
                   <span className="text-primary text-2xl">✦</span>
