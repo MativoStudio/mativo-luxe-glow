@@ -30,11 +30,20 @@ function Index() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Plexus — full hero, interactive through overlays */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Plexus — full hero, interactive through overlays, fades into background */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(ellipse 75% 70% at 70% 45%, black 35%, transparent 85%)",
+            maskImage:
+              "radial-gradient(ellipse 75% 70% at 70% 45%, black 35%, transparent 85%)",
+          }}
+        >
           <Plexus className="w-full h-full opacity-90" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 55%, transparent 100%)" }} />
-          <div className="absolute inset-x-0 bottom-0 h-32" style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 50%, transparent 100%)" }} />
+          <div className="absolute inset-x-0 bottom-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }} />
+          <div className="absolute inset-x-0 top-0 h-24" style={{ background: "linear-gradient(to top, transparent, var(--background))" }} />
         </div>
 
         {/* Floating glow orb */}
