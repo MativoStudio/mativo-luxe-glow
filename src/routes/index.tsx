@@ -69,7 +69,7 @@ function Index() {
                 <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
                 <span className="relative rounded-full h-2 w-2 bg-primary" />
               </span>
-              <span className="text-[10px] font-semibold tracking-[0.3em] text-foreground/80">PRZYJMUJEMY PROJEKTY 2026</span>
+              <span className="text-[10px] font-semibold tracking-[0.3em] text-foreground/80">CZĘSTOCHOWA</span>
             </div>
             <p className="text-xs font-semibold tracking-[0.35em] text-primary mb-6 animate-fade-up">
               NOWOCZESNE ROZWIĄZANIA DLA FIRM
