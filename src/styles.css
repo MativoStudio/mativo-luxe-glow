@@ -161,6 +161,16 @@
     scroll-behavior: smooth;
   }
 
+  /* Fluid, scalable root font size — every rem-based unit scales with viewport */
+  html {
+    font-size: clamp(14px, 0.75vw + 11px, 18px);
+  }
+
+  img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
   ::selection {
     background: oklch(0.6 0.27 285 / 0.4);
     color: oklch(0.99 0.01 270);
