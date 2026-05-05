@@ -50,6 +50,12 @@ export function Plexus({ className = "" }: { className?: string }) {
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
     };
+    const onTouch = (e: TouchEvent) => {
+      if (!e.touches[0]) return;
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.touches[0].clientX - rect.left;
+      mouse.y = e.touches[0].clientY - rect.top;
+    };
     const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
 
     let t = 0;
@@ -109,14 +115,17 @@ export function Plexus({ className = "" }: { className?: string }) {
     resize();
     draw();
     window.addEventListener("resize", resize);
-    canvas.addEventListener("mousemove", onMove);
-    canvas.addEventListener("mouseleave", onLeave);
+    // Listen on window so interaction works even when other elements are on top
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("touchmove", onTouch, { passive: true });
+    window.addEventListener("mouseout", onLeave);
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
-      canvas.removeEventListener("mousemove", onMove);
-      canvas.removeEventListener("mouseleave", onLeave);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("touchmove", onTouch);
+      window.removeEventListener("mouseout", onLeave);
     };
   }, []);
 
