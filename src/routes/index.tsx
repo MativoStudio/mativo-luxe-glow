@@ -30,10 +30,11 @@ function Index() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Plexus right */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[70%] pointer-events-auto">
-          <Plexus className="w-full h-full opacity-95" />
-          <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 40%, transparent 100%)" }} />
+        {/* Plexus — full hero, interactive through overlays */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Plexus className="w-full h-full opacity-90" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 55%, transparent 100%)" }} />
+          <div className="absolute inset-x-0 bottom-0 h-32" style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }} />
         </div>
 
         {/* Floating glow orb */}
