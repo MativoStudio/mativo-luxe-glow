@@ -24,8 +24,9 @@ export function Plexus({ className = "" }: { className?: string }) {
 
       // Wave-shaped point cloud
       points.length = 0;
-      const cols = Math.max(20, Math.floor(w / 28));
-      const rows = Math.max(14, Math.floor(h / 28));
+      const spacing = w < 768 ? 56 : 46;
+      const cols = Math.max(12, Math.floor(w / spacing));
+      const rows = Math.max(8, Math.floor(h / spacing));
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           const px = (i / (cols - 1)) * w;
@@ -59,55 +60,83 @@ export function Plexus({ className = "" }: { className?: string }) {
     const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
 
     let t = 0;
+    const maxDist = 70;
+    const maxDist2 = maxDist * maxDist;
     const draw = () => {
       t += 0.005;
       ctx.clearRect(0, 0, w, h);
 
-      // Update
-      for (const p of points) {
+      // Update + bin into spatial grid (cell size = maxDist)
+      const cellSize = maxDist;
+      const gridCols = Math.max(1, Math.ceil(w / cellSize));
+      const gridRows = Math.max(1, Math.ceil(h / cellSize));
+      const grid: number[][] = new Array(gridCols * gridRows);
+      for (let k = 0; k < grid.length; k++) grid[k] = [];
+
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
         const drift = Math.sin(t + p.bx * 0.01 + p.by * 0.01) * 6;
         p.x = p.bx + Math.cos(t * 0.8 + p.by * 0.02) * 8;
         p.y = p.by + drift;
 
-        // mouse repulsion
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
         const d2 = dx * dx + dy * dy;
         if (d2 < 12000) {
           const f = (12000 - d2) / 12000;
-          p.x += (dx / Math.sqrt(d2 + 1)) * f * 8;
-          p.y += (dy / Math.sqrt(d2 + 1)) * f * 8;
+          const inv = 1 / Math.sqrt(d2 + 1);
+          p.x += dx * inv * f * 8;
+          p.y += dy * inv * f * 8;
         }
+
+        const cx = Math.min(gridCols - 1, Math.max(0, Math.floor(p.x / cellSize)));
+        const cy = Math.min(gridRows - 1, Math.max(0, Math.floor(p.y / cellSize)));
+        grid[cy * gridCols + cx].push(i);
       }
 
-      // Lines
-      const maxDist = 42;
-      for (let i = 0; i < points.length; i++) {
-        const a = points[i];
-        for (let j = i + 1; j < points.length; j++) {
-          const b = points[j];
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.5;
-            ctx.strokeStyle = `rgba(150, 130, 255, ${alpha})`;
-            ctx.lineWidth = 0.6;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
+      // Lines — only check neighbouring cells
+      ctx.lineWidth = 0.6;
+      for (let cy = 0; cy < gridRows; cy++) {
+        for (let cx = 0; cx < gridCols; cx++) {
+          const cell = grid[cy * gridCols + cx];
+          for (let dyc = 0; dyc <= 1; dyc++) {
+            for (let dxc = -1; dxc <= 1; dxc++) {
+              if (dyc === 0 && dxc < 0) continue;
+              const nx = cx + dxc, ny = cy + dyc;
+              if (nx < 0 || nx >= gridCols || ny >= gridRows) continue;
+              const other = grid[ny * gridCols + nx];
+              for (let a = 0; a < cell.length; a++) {
+                const pa = points[cell[a]];
+                const startB = (dxc === 0 && dyc === 0) ? a + 1 : 0;
+                for (let b = startB; b < other.length; b++) {
+                  const pb = points[other[b]];
+                  const dx = pa.x - pb.x;
+                  const dy = pa.y - pb.y;
+                  const d2 = dx * dx + dy * dy;
+                  if (d2 < maxDist2) {
+                    const alpha = (1 - Math.sqrt(d2) / maxDist) * 0.5;
+                    ctx.strokeStyle = `rgba(150, 130, 255, ${alpha})`;
+                    ctx.beginPath();
+                    ctx.moveTo(pa.x, pa.y);
+                    ctx.lineTo(pb.x, pb.y);
+                    ctx.stroke();
+                  }
+                }
+              }
+            }
           }
         }
       }
 
-      // Dots
-      for (const p of points) {
-        ctx.fillStyle = "rgba(180, 160, 255, 0.85)";
-        ctx.beginPath();
+      // Dots — single path
+      ctx.fillStyle = "rgba(180, 160, 255, 0.85)";
+      ctx.beginPath();
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        ctx.moveTo(p.x + 1.1, p.y);
         ctx.arc(p.x, p.y, 1.1, 0, Math.PI * 2);
-        ctx.fill();
       }
+      ctx.fill();
 
       raf = requestAnimationFrame(draw);
     };
