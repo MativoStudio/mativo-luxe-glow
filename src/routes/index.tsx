@@ -41,9 +41,6 @@ function Index() {
           }}
         >
           <Plexus className="w-full h-full opacity-90" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 50%, transparent 100%)" }} />
-          <div className="absolute inset-x-0 bottom-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }} />
-          <div className="absolute inset-x-0 top-0 h-24" style={{ background: "linear-gradient(to top, transparent, var(--background))" }} />
         </div>
 
         {/* Floating glow orb */}
@@ -101,8 +98,6 @@ function Index() {
 
       {/* WHAT WE DO */}
       <section className="relative container mx-auto px-6 py-24 md:py-32">
-        <div className="pointer-events-none absolute inset-x-0 -top-32 h-32" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.08 0.03 280 / 0.4))" }} />
-        <div className="pointer-events-none absolute inset-x-0 -bottom-32 h-32" style={{ background: "linear-gradient(to top, transparent, oklch(0.08 0.03 280 / 0.4))" }} />
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="lg:col-span-4">
             <SectionHeader
@@ -141,8 +136,6 @@ function Index() {
 
       {/* O NAS preview */}
       <section className="relative container mx-auto px-6 py-24 md:py-32">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40" style={{ background: "linear-gradient(to bottom, oklch(0.08 0.03 280 / 0.35), transparent)" }} />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40" style={{ background: "linear-gradient(to top, oklch(0.08 0.03 280 / 0.35), transparent)" }} />
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionHeader
@@ -173,7 +166,6 @@ function Index() {
 
       {/* CTA */}
       <section className="relative container mx-auto px-6 py-24">
-        <div className="pointer-events-none absolute inset-x-0 -top-24 h-24" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.08 0.03 280 / 0.3))" }} />
         <div className="relative glass rounded-3xl p-12 md:p-16 overflow-hidden reveal">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full blur-3xl opacity-40" style={{ background: "var(--gradient-primary)" }} />
           <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
