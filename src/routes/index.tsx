@@ -41,9 +41,6 @@ function Index() {
           }}
         >
           <Plexus className="w-full h-full opacity-90" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, var(--background) 0%, transparent 50%, transparent 100%)" }} />
-          <div className="absolute inset-x-0 bottom-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }} />
-          <div className="absolute inset-x-0 top-0 h-24" style={{ background: "linear-gradient(to top, transparent, var(--background))" }} />
         </div>
 
         {/* Floating glow orb */}
