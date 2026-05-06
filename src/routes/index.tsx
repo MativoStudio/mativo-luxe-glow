@@ -81,8 +81,8 @@ function Index() {
               Mativo<br /><span className="text-gradient-primary">Studio</span>
             </h1>
             <div className="mt-8 h-[2px] w-24 bg-gradient-primary rounded-full animate-fade-up glow" style={{ animationDelay: "160ms" }} />
-            <p className="mt-8 text-base md:text-xl text-muted-foreground max-w-xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
-              Tworzymy <span className="text-foreground font-medium">strony internetowe</span> i <span className="text-foreground font-medium">marketing</span>, który przyciąga klientów i zwiększa sprzedaż.
+            <p className="mt-8 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
+              Tworzę nowoczesne <span className="text-foreground font-medium">strony wizytówkowe</span> dla lokalnych firm, które jasno prezentują <span className="text-foreground font-medium">ofertę</span>, budują <span className="text-foreground font-medium">zaufanie</span> i umożliwiają klientowi szybki <span className="text-foreground font-medium">kontakt</span> lub rezerwację.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
               <CTAButton to="/kontakt">DARMOWA WYCENA</CTAButton>
