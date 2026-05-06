@@ -89,19 +89,6 @@ function Index() {
               <CTAButton to="/uslugi" variant="ghost">NASZE USŁUGI</CTAButton>
             </div>
 
-            {/* Mini stats */}
-            <div className="mt-16 flex flex-wrap gap-10 animate-fade-up" style={{ animationDelay: "420ms" }}>
-              {[
-                { v: "50+", k: "Projektów" },
-                { v: "98%", k: "Zadowolonych" },
-                { v: "5★", k: "Ocena Google" },
-              ].map((s) => (
-                <div key={s.k} className="flex flex-col">
-                  <span className="text-3xl md:text-4xl font-bold text-gradient-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.v}</span>
-                  <span className="text-[10px] tracking-[0.3em] text-muted-foreground mt-1">{s.k.toUpperCase()}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
