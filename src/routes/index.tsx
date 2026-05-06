@@ -101,8 +101,6 @@ function Index() {
 
       {/* WHAT WE DO */}
       <section className="relative container mx-auto px-6 py-24 md:py-32">
-        <div className="pointer-events-none absolute inset-x-0 -top-32 h-32" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.08 0.03 280 / 0.4))" }} />
-        <div className="pointer-events-none absolute inset-x-0 -bottom-32 h-32" style={{ background: "linear-gradient(to top, transparent, oklch(0.08 0.03 280 / 0.4))" }} />
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="lg:col-span-4">
             <SectionHeader
