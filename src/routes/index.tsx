@@ -99,22 +99,6 @@ function Index() {
         </div>
       </section>
 
-      {/* MARQUEE */}
-      <section className="relative py-10 border-y border-border overflow-hidden bg-background/40">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...Array(2)].map((_, dup) => (
-            <div key={dup} className="flex items-center gap-16 px-8">
-              {["WEB DESIGN", "SEO", "REKLAMA GOOGLE", "ANALITYKA", "E-COMMERCE"].map((t) => (
-                <div key={t + dup} className="flex items-center gap-16">
-                  <span className="text-3xl md:text-5xl font-bold tracking-tight text-foreground/30 hover:text-gradient-primary transition-colors" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{t}</span>
-                  <span className="text-primary text-2xl">✦</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* WHAT WE DO */}
       <section className="container mx-auto px-6 py-24 md:py-32">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
