@@ -29,7 +29,7 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-center">
         {/* Plexus — full hero, interactive through overlays, fades into background */}
         <div
           className="absolute inset-0 pointer-events-none"
