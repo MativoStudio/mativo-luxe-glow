@@ -8,9 +8,9 @@ export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
       { title: "Kontakt — Mativo Studio" },
-      { name: "description", content: "Skontaktuj się z Mativo Studio. Email, telefon, formularz darmowej wyceny." },
+      { name: "description", content: "Skontaktuj się z Mativo Studio. Telefon, email, formularz wyceny. Odpowiadam w 24h." },
       { property: "og:title", content: "Kontakt — Mativo Studio" },
-      { property: "og:description", content: "Porozmawiajmy o Twoim projekcie. Darmowa wycena bez zobowiązań." },
+      { property: "og:description", content: "Porozmawiajmy o Twojej stronie. Wycena bez zobowiązań." },
     ],
   }),
   component: ContactPage,
@@ -39,8 +39,8 @@ function ContactPage() {
       <section className="container mx-auto px-6 py-16">
         <SectionHeader
           eyebrow="KONTAKT"
-          title={<>Porozmawiajmy o <span className="text-gradient-primary">Twoim projekcie</span>.</>}
-          subtitle="Wypełnij formularz lub napisz bezpośrednio. Odpowiadamy w 24h. Wycena jest darmowa i bez zobowiązań."
+          title={<>Pogadajmy o <span className="text-gradient-primary">Twojej stronie</span>.</>}
+          subtitle="Napisz parę zdań o swojej firmie i tym, czego potrzebujesz. Wracam z konkretną wyceną w ciągu 24 godzin. Bez zobowiązań."
         />
       </section>
 
@@ -48,9 +48,9 @@ function ContactPage() {
         <div className="grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-4">
             {[
-              { icon: Mail, k: "Email", v: "hello@mativostudio.pl", href: "mailto:hello@mativostudio.pl" },
-              { icon: Phone, k: "Telefon", v: "+48 500 000 000", href: "tel:+48500000000" },
-              { icon: MapPin, k: "Lokalizacja", v: "Polska — pracujemy zdalnie", href: undefined as string | undefined },
+              { icon: Phone, k: "Telefon", v: "+48 889 521 418", href: "tel:+48889521418" },
+              { icon: Mail, k: "Email", v: "kontakt@mativostudio.pl", href: "mailto:kontakt@mativostudio.pl" },
+              { icon: MapPin, k: "Lokalizacja", v: "Częstochowa — pracuję zdalnie z całą Polską", href: undefined as string | undefined },
             ].map((c, i) => (
               <a
                 key={c.k}
@@ -67,6 +67,13 @@ function ContactPage() {
                 </div>
               </a>
             ))}
+
+            <div className="glass rounded-2xl p-6 reveal">
+              <p className="text-[10px] tracking-[0.25em] text-muted-foreground mb-2">CZAS REAKCJI</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Odpowiadam zwykle tego samego dnia, najpóźniej w ciągu 24 godzin roboczych.
+              </p>
+            </div>
           </div>
 
           <form
@@ -77,13 +84,13 @@ function ContactPage() {
               <Field label="Imię" name="name" placeholder="Jan Kowalski" />
               <Field label="Email" name="email" type="email" placeholder="jan@firma.pl" />
             </div>
-            <Field label="Firma" name="company" placeholder="Twoja firma" />
+            <Field label="Firma / branża" name="company" placeholder="np. Salon beauty, barber, restauracja" />
             <div>
-              <label className="block text-[10px] tracking-[0.25em] text-muted-foreground mb-2">WIADOMOŚĆ</label>
+              <label className="block text-[10px] tracking-[0.25em] text-muted-foreground mb-2">OPISZ KRÓTKO PROJEKT</label>
               <textarea
                 rows={5}
                 required
-                placeholder="Opisz krótko swój projekt..."
+                placeholder="Co robisz, czego potrzebujesz od strony, czy masz domenę, czy chcesz rezerwacje online..."
                 className="w-full bg-secondary/40 border border-border rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:glow transition-all resize-none"
               />
             </div>
@@ -91,9 +98,12 @@ function ContactPage() {
               type="submit"
               className="group relative w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gradient-primary text-primary-foreground text-xs font-semibold tracking-[0.2em] overflow-hidden transition-all hover:scale-[1.01] glow"
             >
-              <span className="relative z-10">{sent ? "DZIĘKUJEMY — ODPOWIEMY WKRÓTCE" : "WYŚLIJ WIADOMOŚĆ"}</span>
+              <span className="relative z-10">{sent ? "DZIĘKUJĘ — ODPOWIEM W 24H" : "WYŚLIJ WIADOMOŚĆ"}</span>
               {!sent && <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />}
             </button>
+            <p className="text-[10px] text-muted-foreground/70 text-center">
+              Wysyłając wiadomość zgadzasz się na kontakt zwrotny w sprawie wyceny.
+            </p>
           </form>
         </div>
       </section>
