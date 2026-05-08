@@ -2,25 +2,45 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { CTAButton } from "@/components/site/CTAButton";
-import { Globe, TrendingUp, Heart, Megaphone, Check } from "lucide-react";
+import { Globe, Layers, CalendarCheck, Wrench, Check } from "lucide-react";
 
 export const Route = createFileRoute("/uslugi")({
   head: () => ({
     meta: [
       { title: "Usługi — Mativo Studio" },
-      { name: "description", content: "Strony internetowe, SEO, Social Media, Reklamy online — kompleksowa oferta dla Twojej firmy." },
-      { property: "og:title", content: "Usługi — Mativo Studio" },
-      { property: "og:description", content: "Pełna oferta usług digital agency dla Twojej firmy." },
+      { name: "description", content: "Strony one-page, strony wielosekcyjne, integracje rezerwacji, opieka techniczna. Konkretna oferta dla lokalnych firm." },
+      { property: "og:title", content: "Usługi — strony www dla lokalnych firm" },
+      { property: "og:description", content: "Co robię i jak mogę pomóc Twojej firmie wyglądać profesjonalnie online." },
     ],
   }),
   component: ServicesPage,
 });
 
 const services = [
-  { icon: Globe, title: "Strony internetowe", desc: "Nowoczesne, responsywne strony, które budują wizerunek i sprzedają.", features: ["Projekt UX/UI", "Responsywność", "SEO on-page", "Hosting i wsparcie"] },
-  { icon: TrendingUp, title: "SEO i Google", desc: "Zwiększamy widoczność Twojej firmy w Google i przyciągamy klientów.", features: ["Audyt SEO", "Optymalizacja", "Link building", "Raporty miesięczne"] },
-  { icon: Heart, title: "Social Media", desc: "Prowadzimy Facebook, Instagram i TikTok. Tworzymy treści, które angażują.", features: ["Strategia treści", "Grafiki i video", "Moderacja", "Analityka"] },
-  { icon: Megaphone, title: "Reklamy online", desc: "Skuteczne kampanie Google Ads i Meta Ads, które przynoszą realne wyniki.", features: ["Google Ads", "Meta Ads", "Optymalizacja ROAS", "Remarketing"] },
+  {
+    icon: Globe,
+    title: "Strona one-page",
+    desc: "Zwarta, mocna wizytówka online. Wszystko, co klient musi wiedzieć — w jednym miejscu.",
+    features: ["Projekt mobile-first", "Sekcje: oferta, o nas, kontakt", "Formularz kontaktowy", "Struktura pod SEO", "SSL i konfiguracja domeny"],
+  },
+  {
+    icon: Layers,
+    title: "Strona wielosekcyjna",
+    desc: "Bardziej rozbudowana strona dla firm z większą ofertą lub kilkoma usługami.",
+    features: ["Kilka podstron", "Galeria realizacji", "FAQ", "Pomoc w uporządkowaniu treści", "Przygotowanie strony pod SEO"],
+  },
+  {
+    icon: CalendarCheck,
+    title: "Integracja rezerwacji",
+    desc: "Booksy, Calendly, Reservio lub własny formularz — klient umawia wizytę bez telefonu.",
+    features: ["Wybór systemu pod Twój biznes", "Osadzenie w stronie", "Konfiguracja powiadomień", "Testy na urządzeniach"],
+  },
+  {
+    icon: Wrench,
+    title: "Opieka techniczna",
+    desc: "Hosting, SSL, monitoring i drobne zmiany — strona zawsze online i aktualna.",
+    features: ["Hosting i domena", "Aktualizacje treści", "Monitoring uptime", "Wsparcie mailowe"],
+  },
 ];
 
 function ServicesPage() {
@@ -29,8 +49,8 @@ function ServicesPage() {
       <section className="container mx-auto px-6 py-16">
         <SectionHeader
           eyebrow="USŁUGI"
-          title={<>Wszystko, czego potrzebuje <span className="text-gradient-primary">Twoja firma</span> online.</>}
-          subtitle="Od zaprojektowania strony, przez SEO i social media, aż po skuteczne kampanie reklamowe — działamy kompleksowo."
+          title={<>Robię jedną rzecz — <span className="text-gradient-primary">strony, które działają</span>.</>}
+          subtitle="Bez rozpraszania się na sto rzeczy. Skupiam się tylko na stronach internetowych dla lokalnych firm i marek osobistych."
         />
       </section>
 
@@ -47,10 +67,10 @@ function ServicesPage() {
                   <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
-              <ul className="mt-7 grid grid-cols-2 gap-3">
+              <ul className="mt-7 grid sm:grid-cols-2 gap-3">
                 {s.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm">
-                    <Check className="h-4 w-4 text-primary-glow shrink-0" />
+                  <li key={f} className="flex items-start gap-2.5 text-sm">
+                    <Check className="h-4 w-4 text-primary-glow shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{f}</span>
                   </li>
                 ))}
@@ -60,8 +80,11 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-12 flex justify-center reveal">
-        <CTAButton to="/kontakt">ZAPYTAJ O WYCENĘ</CTAButton>
+      <section className="container mx-auto px-6 py-16 flex flex-col items-center text-center reveal">
+        <p className="text-sm text-muted-foreground max-w-xl mb-6">
+          Nie wiesz, który zakres pasuje do Twojej firmy? Napisz parę zdań o swoim biznesie — odpowiem, co realnie ma sens.
+        </p>
+        <CTAButton to="/kontakt">OMÓW PROJEKT</CTAButton>
       </section>
     </SiteLayout>
   );
