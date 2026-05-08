@@ -30,7 +30,7 @@ const features = [
 ];
 
 const process = [
-  { icon: MessageCircle, k: "Krótka rozmowa", v: "15–30 minut, żeby poznać Twój biznes, klientów i to, czego strona ma dla Ciebie zrobić." },
+  { icon: MessageCircle, k: "Krótka rozmowa", v: "15–30 minut, żeby poznać Twój biznes, klientów i to, co strona ma dla Ciebie zrobić." },
   { icon: Pencil, k: "Ustalenie stylu i funkcji", v: "Wybieramy kierunek wizualny, sekcje, treści i integracje. Dostajesz jasną wycenę." },
   { icon: Code2, k: "Projekt i poprawki", v: "Pokazuję pierwszą wersję strony. Wprowadzamy razem zmiany aż do efektu, który Ci się podoba." },
   { icon: Rocket, k: "Wdrożenie", v: "Konfiguruję domenę, hosting, SSL i analitykę. Strona startuje w pełni gotowa." },
