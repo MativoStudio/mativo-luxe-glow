@@ -5,7 +5,7 @@ import { CTAButton } from "@/components/site/CTAButton";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import {
   Smartphone, Gauge, Search, CalendarCheck, ShieldCheck, Sparkles,
-  ArrowRight, MessageCircle, Pencil, Code2, Rocket, LifeBuoy, Phone, Mail,
+  ArrowRight, MessageCircle, Pencil, Code2, Rocket, Phone, Mail,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -30,11 +30,11 @@ const features = [
 ];
 
 const process = [
-  { icon: MessageCircle, k: "Krótka rozmowa", v: "15–30 minut, żeby poznać Twój biznes, klientów i to, co strona ma dla Ciebie zrobić." },
-  { icon: Pencil, k: "Ustalenie stylu i funkcji", v: "Wybieramy kierunek wizualny, sekcje, treści i integracje. Dostajesz jasną wycenę." },
-  { icon: Code2, k: "Projekt i poprawki", v: "Pokazuję pierwszą wersję strony. Wprowadzamy razem zmiany aż do efektu, który Ci się podoba." },
-  { icon: Rocket, k: "Wdrożenie", v: "Konfiguruję domenę, hosting, SSL i analitykę. Strona startuje w pełni gotowa." },
-  { icon: LifeBuoy, k: "Publikacja i support", v: "Po starcie zostaję w kontakcie. Aktualizacje, drobne zmiany, opieka techniczna." },
+  { icon: MessageCircle, k: "Krótka rozmowa", v: "Ustalamy, czego potrzebuje Twoja firma: ofertę, styl, kontakt, rezerwacje i najważniejsze sekcje strony." },
+  { icon: Pencil, k: "Zakres i wycena", v: "Dostajesz jasną wycenę, termin realizacji i konkretny zakres prac — bez niejasnych kosztów po drodze." },
+  { icon: Code2, k: "Projekt strony", v: "Przygotowuję pierwszą wersję strony. Widzisz, jak będzie wyglądać i zgłaszasz poprawki." },
+  { icon: Sparkles, k: "Poprawki i dopracowanie", v: "Dostosowujemy teksty, sekcje, zdjęcia i szczegóły tak, żeby strona była gotowa do pokazania klientom." },
+  { icon: Rocket, k: "Wdrożenie", v: "Konfiguruję domenę, hosting, SSL i podstawową analitykę. Strona trafia online i jest gotowa do działania." },
 ];
 
 const packages = [
@@ -192,8 +192,8 @@ function Index() {
           <div className="lg:col-span-4">
             <SectionHeader
               eyebrow="JAK WYGLĄDA WSPÓŁPRACA"
-              title={<>Prosty, <span className="text-gradient-primary">uczciwy proces</span>.</>}
-              subtitle="Bez korpo-procedur, bez niejasnych terminów. Wiesz dokładnie, co się dzieje na każdym etapie."
+              title={<>Prosty i <span className="text-gradient-primary">szybki proces</span>.</>}
+              subtitle="Bez zbędnych formalności. Wiesz, co robimy, ile to kosztuje i kiedy strona będzie gotowa."
             />
             <div className="mt-8 reveal">
               <CTAButton to="/kontakt" variant="ghost">UMÓW ROZMOWĘ</CTAButton>
