@@ -22,11 +22,11 @@ export const Route = createFileRoute("/")({
 
 const features = [
   { icon: Smartphone, title: "Mobile-first", desc: "Większość Twoich klientów wchodzi z telefonu. Strona musi tam wyglądać i działać bez zarzutu." },
-  { icon: Gauge, title: "Szybkie ładowanie", desc: "Lekki kod i optymalizacja obrazów. Strona ładuje się w sekundę, więc klient nie ucieka." },
-  { icon: Search, title: "Gotowe pod SEO", desc: "Czysta struktura, poprawne nagłówki i meta dane — Google od razu rozumie, czym się zajmujesz." },
+  { icon: Gauge, title: "Szybkie działanie", desc: "Lekka, dobrze zoptymalizowana strona działa płynnie i nie zniechęca klienta długim ładowaniem." },
+  { icon: Search, title: "Widoczność w Google", desc: "Czysta struktura, poprawne nagłówki i metadane — Google od razu rozumie, czym się zajmujesz." },
   { icon: CalendarCheck, title: "Rezerwacje online", desc: "Integracja z Booksy, Calendly lub własny formularz — klient umawia wizytę bez telefonu." },
   { icon: ShieldCheck, title: "SSL i bezpieczeństwo", desc: "Certyfikat, hosting i konfiguracja domeny — zajmuję się tym za Ciebie." },
-  { icon: Sparkles, title: "Premium prezentacja", desc: "Twoja firma wygląda online tak, jak chciałbyś, żeby wyglądała w realu." },
+  { icon: Sparkles, title: "Profesjonalny wygląd", desc: "Strona od pierwszych sekund buduje zaufanie i pokazuje firmę jako solidną, nowoczesną i wartą kontaktu." },
 ];
 
 const process = [
@@ -146,7 +146,7 @@ function Index() {
             </h1>
             <div className="mt-8 h-[2px] w-24 bg-gradient-primary rounded-full animate-fade-up glow" style={{ animationDelay: "160ms" }} />
             <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
-              Projektuję i koduję strony, które wyglądają premium, ładują się szybko i ułatwiają klientowi kontakt lub rezerwację. Salony, barber shopy, restauracje, siłownie, detailing, marki osobiste — wszędzie tam, gdzie strona realnie sprzedaje.
+              Projektuję nowoczesne strony dla firm, które chcą robić lepsze pierwsze wrażenie, jasno pokazać ofertę i zamieniać odwiedzających w klientów.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
               <CTAButton to="/kontakt">ZAPYTAJ O WYCENĘ</CTAButton>
@@ -155,8 +155,8 @@ function Index() {
 
             <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-muted-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
               <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Wycena w 24h</span>
-              <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Bez zobowiązań</span>
-              <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Wdrożenie w 2–4 tygodnie</span>
+              <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Szybki start projektu</span>
+              <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Prosta strona gotowa nawet w 3 dni robocze</span>
             </div>
           </div>
         </div>
