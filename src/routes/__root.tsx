@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
+import favicon from "../assets/mativo-logo.png?url";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -43,6 +44,9 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5ccb6fb1-b65d-4a1a-a77a-58e910ca1a39/id-preview-9671fd91--8596505d-f930-4189-bf1b-37ea7f76fcbc.lovable.app-1777741465360.png" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: favicon },
+      { rel: "shortcut icon", type: "image/png", href: favicon },
+      { rel: "apple-touch-icon", href: favicon },
       {
         rel: "stylesheet",
         href: appCss,
