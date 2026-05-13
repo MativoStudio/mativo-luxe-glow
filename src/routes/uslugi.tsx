@@ -20,26 +20,49 @@ const services = [
   {
     icon: Globe,
     title: "Strona one-page",
-    desc: "Zwarta, mocna wizytówka online. Wszystko, co klient musi wiedzieć — w jednym miejscu.",
-    features: ["Projekt mobile-first", "Sekcje: oferta, o nas, kontakt", "Formularz kontaktowy", "Struktura pod SEO", "SSL i konfiguracja domeny"],
+    desc: "Dla firm, które chcą szybko ruszyć online i pokazać najważniejsze informacje w jednym miejscu. Najlepsza dla lokalnych usług, małych firm, freelancerów i nowych biznesów.",
+    features: [
+      "Oferta, informacje o firmie i kontakt",
+      "Formularz kontaktowy",
+      "Podstawowa widoczność w Google",
+      "Szybkie działanie na telefonie",
+    ],
   },
   {
     icon: Layers,
     title: "Strona wielosekcyjna",
-    desc: "Bardziej rozbudowana strona dla firm z większą ofertą lub kilkoma usługami.",
-    features: ["Kilka podstron", "Galeria realizacji", "FAQ", "Pomoc w uporządkowaniu treści", "Przygotowanie strony pod SEO"],
+    desc: "Dla firm, które mają więcej usług, zdjęć, realizacji albo chcą mocniej zbudować zaufanie przed kontaktem.",
+    features: [
+      "Kilka sekcji lub podstron",
+      "Galeria realizacji",
+      "Sekcja FAQ",
+      "Pomoc w uporządkowaniu treści",
+      "Układ nastawiony na kontakt z klientem",
+      "Mocniejsza prezentacja oferty",
+    ],
   },
   {
     icon: CalendarCheck,
-    title: "Integracja rezerwacji",
-    desc: "Booksy, Calendly, Reservio lub własny formularz — klient umawia wizytę bez telefonu.",
-    features: ["Wybór systemu pod Twój biznes", "Osadzenie w stronie", "Konfiguracja powiadomień", "Testy na urządzeniach"],
+    title: "Rezerwacje i formularze",
+    desc: "Dla biznesów, gdzie klient powinien szybko umówić termin albo wysłać konkretne zapytanie. Booksy, Calendly, Reservio, formularz kontaktowy, link do telefonu, WhatsApp lub Messenger — to tylko przykłady. Dobieram rozwiązanie pod sposób, w jaki Twoi klienci najczęściej się kontaktują.",
+    features: [
+      "Dobór rozwiązania pod Twój biznes",
+      "Osadzenie systemu na stronie",
+      "Konfiguracja formularzy i powiadomień",
+      "Testy na telefonie i komputerze",
+    ],
   },
   {
     icon: Wrench,
-    title: "Opieka techniczna",
-    desc: "Hosting, SSL, monitoring i drobne zmiany — strona zawsze online i aktualna.",
-    features: ["Hosting i domena", "Aktualizacje treści", "Monitoring uptime", "Wsparcie mailowe"],
+    title: "Opieka po wdrożeniu",
+    desc: "Dla firm, które nie chcą samodzielnie pilnować hostingu, SSL, drobnych zmian i działania strony.",
+    features: [
+      "Hosting strony",
+      "SSL i podstawowe zabezpieczenia",
+      "Monitoring dostępności",
+      "Drobne aktualizacje treści",
+      "Wsparcie mailowe",
+    ],
   },
 ];
 
@@ -49,8 +72,8 @@ function ServicesPage() {
       <section className="container mx-auto px-6 py-16">
         <SectionHeader
           eyebrow="USŁUGI"
-          title={<>Robię jedną rzecz — <span className="text-gradient-primary">strony, które działają</span>.</>}
-          subtitle="Bez rozpraszania się na sto rzeczy. Skupiam się tylko na stronach internetowych dla lokalnych firm i marek osobistych."
+          title={<>Dobieram stronę do tego, <span className="text-gradient-primary">czego faktycznie potrzebuje firma</span>.</>}
+          subtitle="Nie każdy biznes potrzebuje rozbudowanej strony za kilka tysięcy. Czasem wystarczy mocna wizytówka online, a czasem lepiej zbudować pełniejszą prezentację z galerią, FAQ i rezerwacjami."
         />
       </section>
 
@@ -82,7 +105,7 @@ function ServicesPage() {
 
       <section className="container mx-auto px-6 py-16 flex flex-col items-center text-center reveal">
         <p className="text-sm text-muted-foreground max-w-xl mb-6">
-          Nie wiesz, który zakres pasuje do Twojej firmy? Napisz parę zdań o swoim biznesie — odpowiem, co realnie ma sens.
+          Nie wiesz, jaki zakres pasuje do Twojej firmy? Napisz kilka zdań o swoim biznesie — odpowiem, co realnie ma sens i jaki pakiet będzie najlepszy.
         </p>
         <CTAButton to="/kontakt">OMÓW PROJEKT</CTAButton>
       </section>
