@@ -93,7 +93,7 @@ const carePlans = [
     price: "79 zł",
     period: "/ miesiąc",
     desc: "Podstawowa opieka techniczna, żeby strona działała stabilnie.",
-    features: ["Hosting", "SSL", "Ochrona i firewall", "Monitoring uptime", "Drobne aktualizacje"],
+    features: ["SSL", "Ochrona i firewall", "Monitoring uptime"],
   },
   {
     name: "Priority",

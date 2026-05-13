@@ -72,7 +72,7 @@ const carePlans = [
     price: "79 zł",
     period: "/ miesiąc",
     desc: "Strona zawsze online, bezpieczna, pod monitoringiem.",
-    features: ["Hosting", "SSL", "Ochrona i firewall", "Monitoring uptime", "Drobne aktualizacje"],
+    features: ["SSL", "Ochrona i firewall", "Monitoring uptime"],
   },
   {
     name: "Priority",
