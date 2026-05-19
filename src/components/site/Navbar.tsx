@@ -23,13 +23,22 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll while mobile menu is open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3 backdrop-blur-xl bg-background/70 border-b border-border" : "py-5 bg-transparent"
+        scrolled || open
+          ? "py-3 backdrop-blur-xl bg-background/80 border-b border-border"
+          : "py-4 md:py-5 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="shrink-0">
           <Logo />
         </Link>
@@ -58,7 +67,8 @@ export function Navbar() {
 
         <button
           aria-label="Menu"
-          className="lg:hidden p-2 rounded-md border border-border"
+          aria-expanded={open}
+          className="lg:hidden inline-flex items-center justify-center h-11 w-11 rounded-lg border border-border bg-secondary/40 backdrop-blur-md active:scale-95 transition-transform"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -66,27 +76,35 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden absolute top-full inset-x-0 glass border-t border-border">
-          <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
-            {links.map((l) => (
+        <>
+          <div
+            className="lg:hidden fixed inset-0 top-[64px] bg-background/70 backdrop-blur-sm -z-[1]"
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="lg:hidden absolute top-full inset-x-0 glass border-t border-border animate-fade-up">
+            <nav className="container mx-auto px-4 py-6 flex flex-col gap-1">
+              {links.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-3.5 rounded-lg text-base font-medium tracking-wide text-muted-foreground hover:text-foreground hover:bg-secondary/40 transition-colors"
+                  activeProps={{ className: "text-foreground bg-secondary/40" }}
+                >
+                  {l.label}
+                </Link>
+              ))}
               <Link
-                key={l.to}
-                to={l.to}
+                to="/kontakt"
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground"
+                className="mt-3 inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-gradient-primary text-[11px] font-semibold tracking-[0.22em] text-primary-foreground glow"
               >
-                {l.label.toUpperCase()}
+                DARMOWA WYCENA <ArrowRight className="h-4 w-4" />
               </Link>
-            ))}
-            <Link
-              to="/kontakt"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gradient-primary text-xs font-semibold tracking-wider"
-            >
-              DARMOWA WYCENA <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </nav>
-        </div>
+            </nav>
+          </div>
+        </>
       )}
     </header>
   );
