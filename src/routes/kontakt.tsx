@@ -26,7 +26,7 @@ function Field({ label, name, type = "text", placeholder }: { label: string; nam
         type={type}
         required
         placeholder={placeholder}
-        className="w-full bg-secondary/40 border border-border rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:glow transition-all"
+        className="w-full bg-secondary/40 border border-border rounded-xl px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:glow transition-all"
       />
     </div>
   );
