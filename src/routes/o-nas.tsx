@@ -28,7 +28,7 @@ const values = [
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <SectionHeader
           eyebrow="O STUDIU"
           title={<>Małe studio webowe — <span className="text-gradient-primary">duża dbałość o szczegóły</span>.</>}
@@ -36,35 +36,35 @@ function AboutPage() {
         />
       </section>
 
-      <section className="container mx-auto px-6 py-8">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div className="glass rounded-3xl p-8 md:p-10 reveal">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+      <section className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+          <div className="glass rounded-3xl p-6 sm:p-8 md:p-10 reveal">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Jak pracuję
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Bez korpo-procesu, bez ukrywania kosztów, bez gotowych szablonów. Najpierw krótka rozmowa, potem konkretna wycena. Pracujemy razem nad stylem, treściami i funkcjami, aż strona naprawdę pasuje do Twojego biznesu.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Skupiam się tylko na stronach internetowych — nie prowadzę reklam, nie ogarniam social mediów, nie projektuję logo. Robię jedną rzecz dobrze.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5">
             {values.slice(0, 4).map((v, i) => (
-              <div key={v.k} className="glass rounded-2xl p-6 reveal" style={{ transitionDelay: `${i * 60}ms` }}>
-                <v.icon className="h-5 w-5 text-primary-glow mb-4" />
-                <p className="text-sm font-semibold mb-1.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{v.k}</p>
-                <p className="text-xs text-muted-foreground leading-relaxed">{v.v}</p>
+              <div key={v.k} className="glass rounded-2xl p-4 sm:p-6 reveal" style={{ transitionDelay: `${i * 60}ms` }}>
+                <v.icon className="h-5 w-5 text-primary-glow mb-3 sm:mb-4" />
+                <p className="text-[13px] sm:text-sm font-semibold mb-1.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{v.k}</p>
+                <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">{v.v}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {values.map((v, i) => (
-            <div key={v.k} className="group glass rounded-2xl p-7 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={v.k} className="group glass rounded-2xl p-6 sm:p-7 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
               <div className="w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center mb-5 group-hover:glow transition-all">
                 <v.icon className="h-5 w-5 text-primary-glow" />
               </div>
@@ -75,8 +75,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-12 flex justify-center reveal">
-        <CTAButton to="/kontakt">SKONTAKTUJ SIĘ</CTAButton>
+      <section className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 flex justify-center reveal">
+        <CTAButton to="/kontakt" fullWidthOnMobile>SKONTAKTUJ SIĘ</CTAButton>
       </section>
     </SiteLayout>
   );
