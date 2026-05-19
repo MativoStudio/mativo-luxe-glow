@@ -115,9 +115,9 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative min-h-[88vh] flex items-center">
+      <section className="relative min-h-[88vh] flex items-center py-16 md:py-0">
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none opacity-60 md:opacity-100"
           style={{
             WebkitMaskImage: "radial-gradient(ellipse 75% 70% at 70% 45%, black 35%, transparent 85%)",
             maskImage: "radial-gradient(ellipse 75% 70% at 70% 45%, black 35%, transparent 85%)",
@@ -126,36 +126,36 @@ function Index() {
           <Plexus className="w-full h-full opacity-80" />
         </div>
 
-        <div className="absolute top-1/3 right-[15%] w-72 h-72 rounded-full pointer-events-none animate-float" style={{ background: "radial-gradient(circle, oklch(0.6 0.28 285 / 0.35), transparent 65%)", filter: "blur(40px)" }} />
+        <div className="hidden md:block absolute top-1/3 right-[15%] w-72 h-72 rounded-full pointer-events-none animate-float" style={{ background: "radial-gradient(circle, oklch(0.6 0.28 285 / 0.35), transparent 65%)", filter: "blur(40px)" }} />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full glass animate-fade-up">
+            <div className="inline-flex items-center gap-2 mb-6 md:mb-8 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass animate-fade-up">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
                 <span className="relative rounded-full h-2 w-2 bg-primary" />
               </span>
-              <span className="text-[10px] font-semibold tracking-[0.3em] text-foreground/80">CZĘSTOCHOWA · POLSKA</span>
+              <span className="text-[9px] md:text-[10px] font-semibold tracking-[0.25em] md:tracking-[0.3em] text-foreground/80">CZĘSTOCHOWA · POLSKA</span>
             </div>
-            <p className="text-xs font-semibold tracking-[0.35em] text-primary mb-6 animate-fade-up">
+            <p className="text-[10px] md:text-xs font-semibold tracking-[0.3em] md:tracking-[0.35em] text-primary mb-4 md:mb-6 animate-fade-up">
               MATIVO STUDIO
             </p>
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight animate-fade-up"
+              className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] sm:leading-[0.98] tracking-tight animate-fade-up"
               style={{ fontFamily: "'Space Grotesk', sans-serif", animationDelay: "80ms" }}
             >
               Nowoczesne strony www dla <span className="text-gradient-primary">lokalnych biznesów</span>.
             </h1>
-            <div className="mt-8 h-[2px] w-24 bg-gradient-primary rounded-full animate-fade-up glow" style={{ animationDelay: "160ms" }} />
-            <p className="mt-8 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
+            <div className="mt-6 md:mt-8 h-[2px] w-20 md:w-24 bg-gradient-primary rounded-full animate-fade-up glow" style={{ animationDelay: "160ms" }} />
+            <p className="mt-6 md:mt-8 text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
               Projektuję nowoczesne strony dla firm, które chcą robić lepsze pierwsze wrażenie, jasno pokazać ofertę i zamieniać odwiedzających w klientów.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
-              <CTAButton to="/kontakt">ZAPYTAJ O WYCENĘ</CTAButton>
-              <CTAButton to="/cennik" variant="ghost">ZOBACZ OFERTĘ</CTAButton>
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
+              <CTAButton to="/kontakt" fullWidthOnMobile>ZAPYTAJ O WYCENĘ</CTAButton>
+              <CTAButton to="/cennik" variant="ghost" fullWidthOnMobile>ZOBACZ OFERTĘ</CTAButton>
             </div>
 
-            <div className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-muted-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
+            <div className="mt-10 md:mt-14 flex flex-wrap items-center gap-x-6 md:gap-x-8 gap-y-2.5 text-[11px] md:text-xs text-muted-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
               <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Wycena w 24h</span>
               <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Szybki start projektu</span>
               <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> Prosta strona gotowa nawet w 3 dni robocze</span>
@@ -165,17 +165,17 @@ function Index() {
       </section>
 
       {/* CO DOSTAJESZ */}
-      <section className="relative container mx-auto px-6 py-24 md:py-28">
+      <section className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28">
         <SectionHeader
           eyebrow="CO DOSTAJESZ"
           title={<>Strona, która <span className="text-gradient-primary">pracuje na Twój biznes</span>.</>}
           subtitle="Każdy projekt robię tak, żeby spełniał kilka prostych zasad — bo to one decydują, czy klient u Ciebie zostanie czy ucieknie do konkurencji."
         />
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className="group relative glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/60 reveal"
+              className="group relative glass rounded-2xl p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/60 reveal"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               <div className="w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center mb-5 group-hover:glow transition-all">
@@ -189,8 +189,8 @@ function Index() {
       </section>
 
       {/* PROCES */}
-      <section className="relative container mx-auto px-6 py-24 md:py-28">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      <section className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-20 items-start">
           <div className="lg:col-span-4">
             <SectionHeader
               eyebrow="JAK WYGLĄDA WSPÓŁPRACA"
@@ -198,25 +198,25 @@ function Index() {
               subtitle="Bez zbędnych formalności. Wiesz, co robimy, ile to kosztuje i kiedy strona będzie gotowa."
             />
             <div className="mt-8 reveal">
-              <CTAButton to="/kontakt" variant="ghost">UMÓW ROZMOWĘ</CTAButton>
+              <CTAButton to="/kontakt" variant="ghost" fullWidthOnMobile>UMÓW ROZMOWĘ</CTAButton>
             </div>
           </div>
-          <ol className="lg:col-span-8 space-y-4">
+          <ol className="lg:col-span-8 space-y-3 sm:space-y-4">
             {process.map((p, i) => (
               <li
                 key={p.k}
-                className="group glass rounded-2xl p-6 md:p-7 flex items-start gap-5 hover:border-primary/50 transition-all reveal"
+                className="group glass rounded-2xl p-5 sm:p-6 md:p-7 flex items-start gap-4 sm:gap-5 hover:border-primary/50 transition-all reveal"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="shrink-0 w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
+                <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
                   <p.icon className="h-5 w-5 text-primary-glow" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-baseline gap-3 mb-1.5">
                     <span className="text-xs font-mono text-primary/70">0{i + 1}</span>
-                    <h3 className="text-base md:text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{p.k}</h3>
+                    <h3 className="text-[15px] sm:text-base md:text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{p.k}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{p.v}</p>
+                  <p className="text-[13px] sm:text-sm text-muted-foreground leading-relaxed">{p.v}</p>
                 </div>
               </li>
             ))}
@@ -225,17 +225,17 @@ function Index() {
       </section>
 
       {/* PAKIETY */}
-      <section className="relative container mx-auto px-6 py-24 md:py-28">
+      <section className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28">
         <SectionHeader
           eyebrow="PAKIETY"
           title={<>Trzy poziomy — wybierasz <span className="text-gradient-primary">to, czego potrzebujesz</span>.</>}
           subtitle="Każdą wycenę robię indywidualnie po krótkiej rozmowie. Poniżej widełki, w których realnie się poruszamy."
         />
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
+        <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-5">
           {packages.map((p, i) => (
             <div
               key={p.name}
-              className={`group relative glass rounded-3xl p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40" : "hover:border-primary/60"}`}
+              className={`group relative glass rounded-3xl p-6 sm:p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40 ring-1 ring-primary/30" : "hover:border-primary/60"}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               {p.highlighted && (
@@ -266,15 +266,15 @@ function Index() {
       </section>
 
       {/* CARE PLANS */}
-      <section className="relative container mx-auto px-6 py-24 md:py-28">
+      <section className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28">
         <SectionHeader
           eyebrow="OPIEKA MIESIĘCZNA"
           title={<>Strona to nie wszystko — <span className="text-gradient-primary">trzeba o nią dbać</span>.</>}
           subtitle="Po wdrożeniu możesz zostać na jednym z planów opieki. Hosting, bezpieczeństwo i drobne zmiany — z głowy."
         />
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
+        <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-5">
           {carePlans.map((c, i) => (
-            <div key={c.name} className="glass rounded-3xl p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={c.name} className="glass rounded-3xl p-6 sm:p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
               <h3 className="text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.name}</h3>
               <div className="mt-3 flex items-baseline gap-1.5">
                 <span className="text-3xl font-bold text-gradient-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.price}</span>
@@ -295,18 +295,18 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section className="relative container mx-auto px-6 py-24">
-        <div className="relative glass rounded-3xl p-10 md:p-14 overflow-hidden reveal">
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full blur-3xl opacity-40" style={{ background: "var(--gradient-primary)" }} />
-          <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
+      <section className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <div className="relative glass rounded-3xl p-7 sm:p-10 md:p-14 overflow-hidden reveal">
+          <div className="absolute -top-20 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full blur-3xl opacity-30 sm:opacity-40 pointer-events-none" style={{ background: "var(--gradient-primary)" }} />
+          <div className="relative grid md:grid-cols-[1fr_auto] gap-6 md:gap-8 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Masz pomysł na stronę? <span className="text-gradient-primary">Pogadajmy.</span>
               </h2>
-              <p className="mt-4 text-muted-foreground max-w-xl">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground max-w-xl">
                 Krótki opis projektu, kilka pytań z mojej strony i konkretna wycena w ciągu 24 godzin. Bez zobowiązań.
               </p>
-              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2 text-sm">
                 <a href="tel:+48889521418" className="inline-flex items-center gap-2 hover:text-primary transition-colors">
                   <Phone className="h-4 w-4 text-primary-glow" /> +48 889 521 418
                 </a>
@@ -315,7 +315,7 @@ function Index() {
                 </a>
               </div>
             </div>
-            <CTAButton to="/kontakt">ZAPYTAJ O WYCENĘ</CTAButton>
+            <CTAButton to="/kontakt" fullWidthOnMobile>ZAPYTAJ O WYCENĘ</CTAButton>
           </div>
         </div>
       </section>

@@ -93,7 +93,7 @@ const carePlans = [
 function PricingPage() {
   return (
     <SiteLayout>
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <SectionHeader
           eyebrow="CENNIK"
           title={<>Konkretne widełki, <span className="text-gradient-primary">bez ukrytych kosztów</span>.</>}
@@ -101,12 +101,12 @@ function PricingPage() {
         />
       </section>
 
-      <section className="container mx-auto px-6 py-8">
+      <section className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="grid md:grid-cols-3 gap-5">
           {packages.map((p, i) => (
             <div
               key={p.name}
-              className={`group relative glass rounded-3xl p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40" : "hover:border-primary/60"}`}
+              className={`group relative glass rounded-3xl p-6 sm:p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40 ring-1 ring-primary/30" : "hover:border-primary/60"}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               {p.highlighted && (
@@ -115,9 +115,9 @@ function PricingPage() {
                 </div>
               )}
               <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-2">{p.tag.toUpperCase()}</p>
-              <h3 className="text-2xl font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{p.name}</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{p.name}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">{p.desc}</p>
-              <div className="text-2xl font-bold text-gradient-primary mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <div className="text-xl sm:text-2xl font-bold text-gradient-primary mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 {p.price}
               </div>
               <ul className="space-y-2.5 mb-7">
@@ -128,7 +128,10 @@ function PricingPage() {
                   </li>
                 ))}
               </ul>
-              <Link to="/kontakt" className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-primary hover:gap-3 transition-all">
+              <Link
+                to="/kontakt"
+                className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-0 py-3 sm:py-0 rounded-xl sm:rounded-none text-xs font-semibold tracking-[0.22em] transition-all ${p.highlighted ? "bg-gradient-primary text-primary-foreground sm:bg-transparent sm:text-primary glow sm:shadow-none" : "border border-border sm:border-0 bg-secondary/40 sm:bg-transparent text-foreground sm:text-primary hover:border-primary/60 sm:hover:gap-3"}`}
+              >
                 ZAPYTAJ O WYCENĘ <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -136,15 +139,15 @@ function PricingPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-20">
+      <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <SectionHeader
           eyebrow="OPIEKA MIESIĘCZNA"
           title={<>Plany utrzymania <span className="text-gradient-primary">i wsparcia</span>.</>}
           subtitle="Po wdrożeniu możesz zostać pod opieką. Hosting, bezpieczeństwo, drobne zmiany — bez stresu."
         />
-        <div className="mt-12 grid md:grid-cols-3 gap-5">
+        <div className="mt-10 sm:mt-12 grid md:grid-cols-3 gap-5">
           {carePlans.map((c, i) => (
-            <div key={c.name} className="glass rounded-3xl p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={c.name} className="glass rounded-3xl p-6 sm:p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
               <h3 className="text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.name}</h3>
               <div className="mt-3 flex items-baseline gap-1.5">
                 <span className="text-3xl font-bold text-gradient-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.price}</span>
@@ -164,17 +167,17 @@ function PricingPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-16">
-        <div className="glass rounded-3xl p-10 md:p-14 text-center reveal">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="glass rounded-3xl p-7 sm:p-10 md:p-14 text-center reveal">
           <Sparkles className="h-9 w-9 text-primary-glow mx-auto mb-5" />
-          <h2 className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Każdą stronę <span className="text-gradient-primary">wyceniam indywidualnie</span>.
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
             Napisz parę zdań o swojej firmie — wrócę z konkretną wyceną w 24 godziny.
           </p>
-          <div className="mt-8 flex justify-center">
-            <CTAButton to="/kontakt">ZAPYTAJ O WYCENĘ</CTAButton>
+          <div className="mt-7 sm:mt-8 flex justify-center">
+            <CTAButton to="/kontakt" fullWidthOnMobile>ZAPYTAJ O WYCENĘ</CTAButton>
           </div>
         </div>
       </section>

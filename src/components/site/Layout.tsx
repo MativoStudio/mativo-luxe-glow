@@ -67,7 +67,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       </div>
 
       <Navbar />
-      <main className="pt-28">{children}</main>
+      <main className="pt-20 md:pt-28">{children}</main>
       <Footer />
     </div>
   );

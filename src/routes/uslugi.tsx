@@ -69,7 +69,7 @@ const services = [
 function ServicesPage() {
   return (
     <SiteLayout>
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <SectionHeader
           eyebrow="USŁUGI"
           title={<>Dobieram stronę do tego, <span className="text-gradient-primary">czego faktycznie potrzebuje firma</span>.</>}
@@ -77,20 +77,20 @@ function ServicesPage() {
         />
       </section>
 
-      <section className="container mx-auto px-6 py-12">
+      <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
-            <div key={s.title} className="group relative glass rounded-3xl p-8 md:p-10 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
-              <div className="flex items-start gap-5">
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
+            <div key={s.title} className="group relative glass rounded-3xl p-6 sm:p-8 md:p-10 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
                   <s.icon className="h-6 w-6 text-primary-glow" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
-              <ul className="mt-7 grid sm:grid-cols-2 gap-3">
+              <ul className="mt-6 sm:mt-7 grid sm:grid-cols-2 gap-2.5 sm:gap-3">
                 {s.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
                     <Check className="h-4 w-4 text-primary-glow shrink-0 mt-0.5" />
@@ -103,11 +103,11 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-16 flex flex-col items-center text-center reveal">
-        <p className="text-sm text-muted-foreground max-w-xl mb-6">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center text-center reveal">
+        <p className="text-sm text-muted-foreground max-w-xl mb-6 px-2">
           Nie wiesz, jaki zakres pasuje do Twojej firmy? Napisz kilka zdań o swoim biznesie — odpowiem, co realnie ma sens i jaki pakiet będzie najlepszy.
         </p>
-        <CTAButton to="/kontakt">OMÓW PROJEKT</CTAButton>
+        <CTAButton to="/kontakt" fullWidthOnMobile>OMÓW PROJEKT</CTAButton>
       </section>
     </SiteLayout>
   );
