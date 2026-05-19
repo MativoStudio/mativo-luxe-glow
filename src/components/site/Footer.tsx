@@ -3,13 +3,13 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="relative mt-32 border-t border-border bg-background/60">
+    <footer className="relative mt-20 sm:mt-32 border-t border-border bg-background/60">
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
-      <div className="container mx-auto px-6 py-16 relative">
-        <div className="grid md:grid-cols-4 gap-10">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
           <div className="md:col-span-2">
             <Logo />
-            <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
               Małe studio webowe z Częstochowy. Robię nowoczesne, szybkie strony dla lokalnych biznesów i marek osobistych.
             </p>
           </div>
@@ -32,7 +32,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-10 sm:mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-xs text-muted-foreground text-center">
           <p>© {new Date().getFullYear()} Mativo Studio. Wszystkie prawa zastrzeżone.</p>
           <p>Zaprojektowane i zakodowane w Polsce.</p>
         </div>
