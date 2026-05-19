@@ -8,7 +8,7 @@ export const Route = createFileRoute("/cennik")({
   head: () => ({
     meta: [
       { title: "Cennik — Mativo Studio" },
-      { name: "description", content: "Strony www od 600 zł. Trzy pakiety: Starter, Biznes, Premium. Plus miesięczne plany opieki technicznej od 79 zł." },
+      { name: "description", content: "Strony www od 600 zł. Trzy pakiety: Starter, Biznes, Premium. Plus miesięczne plany opieki technicznej od 30 zł." },
       { property: "og:title", content: "Cennik stron www — Mativo Studio" },
       { property: "og:description", content: "Konkretne widełki cenowe i miesięczne plany opieki technicznej." },
     ],
@@ -69,21 +69,21 @@ const packages = [
 const carePlans = [
   {
     name: "Secure",
-    price: "79 zł",
+    price: "30 zł",
     period: "/ miesiąc",
     desc: "Strona zawsze online, bezpieczna, pod monitoringiem.",
     features: ["SSL", "Ochrona i firewall", "Monitoring uptime"],
   },
   {
     name: "Priority",
-    price: "149 zł",
+    price: "40 zł",
     period: "/ miesiąc",
     desc: "Dla firm, dla których strona to realne źródło klientów.",
     features: ["Wszystko z Secure", "Priorytetowy support", "Szybszy czas reakcji", "Monitoring wydajności"],
   },
   {
     name: "Plus",
-    price: "299 zł",
+    price: "70 zł",
     period: "/ miesiąc",
     desc: "Pełna opieka — Ty prowadzisz biznes, ja dbam o stronę.",
     features: ["Wszystko z Priority", "Aktualizacje treści", "Dodawanie zdjęć i galerii", "Zmiany tekstów", "Comiesięczny przegląd"],
