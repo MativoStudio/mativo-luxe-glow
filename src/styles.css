@@ -159,6 +159,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   /* Fluid, scalable root font size — every rem-based unit scales with viewport */
@@ -321,4 +322,16 @@
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
+}
+
+/* Mobile tuning — keep premium look, tone down heavy effects */
+@media (max-width: 640px) {
+  .grid-bg { background-size: 48px 48px; }
+  .aurora { filter: blur(60px); opacity: 0.35; }
+  .reveal { transform: translateY(24px); filter: blur(4px); }
+  .glass { backdrop-filter: blur(16px) saturate(130%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-aurora, .animate-glow-pulse, .animate-spin-slow, .animate-shimmer { animation: none !important; }
 }
