@@ -134,7 +134,7 @@ function Index() {
               MATIVO STUDIO
             </p>
             <h1
-              className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] sm:leading-[0.98] tracking-tight animate-fade-up"
+              className="text-[2.625rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] sm:leading-[0.98] tracking-tight animate-fade-up"
               style={{ fontFamily: "'Space Grotesk', sans-serif", animationDelay: "80ms" }}
             >
               Nowoczesne strony www dla <span className="text-gradient-primary">lokalnych biznesów</span>.
