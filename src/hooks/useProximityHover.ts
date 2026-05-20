@@ -9,6 +9,8 @@ import { useEffect } from "react";
 export function useProximityHover() {
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(hover: none), (max-width: 768px)");
+    if (!mq.matches) return;
 
     let raf = 0;
     const compute = () => {
