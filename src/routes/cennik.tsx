@@ -107,7 +107,7 @@ function PricingPage() {
             <div
               key={p.name}
               data-proximity-item
-              className={`group relative glass rounded-3xl p-6 sm:p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40 ring-1 ring-primary/30" : "hover:border-primary/60"}`}
+              className={`group relative glass rounded-3xl p-6 sm:p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40 ring-1 ring-primary/30 hover:border-primary/60" : "hover:border-primary/60"}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               {p.highlighted && (
