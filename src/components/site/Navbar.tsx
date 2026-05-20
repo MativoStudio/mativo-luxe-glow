@@ -78,19 +78,19 @@ export function Navbar() {
       {open && (
         <>
           <div
-            className="lg:hidden fixed inset-0 top-[64px] bg-background/70 backdrop-blur-sm -z-[1]"
+            className="lg:hidden fixed inset-0 top-[64px] bg-background/85 backdrop-blur-xl -z-[1]"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-          <div className="lg:hidden absolute top-full inset-x-0 glass border-t border-border animate-fade-up">
+          <div className="lg:hidden absolute top-full inset-x-0 border-t border-primary/20 bg-background/95 backdrop-blur-2xl shadow-2xl animate-fade-up">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-1">
               {links.map((l) => (
                 <Link
                   key={l.to}
                   to={l.to}
                   onClick={() => setOpen(false)}
-                  className="px-3 py-3.5 rounded-lg text-base font-medium tracking-wide text-muted-foreground hover:text-foreground hover:bg-secondary/40 transition-colors"
-                  activeProps={{ className: "text-foreground bg-secondary/40" }}
+                  className="px-3 py-3.5 rounded-lg text-base font-medium tracking-wide text-foreground/90 hover:text-foreground hover:bg-secondary/70 transition-colors"
+                  activeProps={{ className: "text-foreground bg-secondary/70" }}
                 >
                   {l.label}
                 </Link>
