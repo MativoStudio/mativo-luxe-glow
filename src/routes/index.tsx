@@ -134,14 +134,14 @@ function Index() {
               MATIVO STUDIO
             </p>
             <h1
-              className="text-[2.625rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] sm:leading-[0.98] tracking-tight animate-fade-up"
+              className="text-[3.675rem] sm:text-[4.2rem] md:text-[5.25rem] lg:text-[6.3rem] font-bold leading-[1.02] sm:leading-[0.98] tracking-tight animate-fade-up"
               style={{ fontFamily: "'Space Grotesk', sans-serif", animationDelay: "80ms" }}
             >
               Nowoczesne strony www dla <span className="text-gradient-primary">lokalnych biznesów</span>.
             </h1>
             <div className="mt-6 md:mt-8 h-[2px] w-20 md:w-24 bg-gradient-primary rounded-full animate-fade-up glow" style={{ animationDelay: "160ms" }} />
             <p className="mt-6 md:mt-8 text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "240ms" }}>
-              Projektuję nowoczesne strony dla firm, które chcą robić lepsze pierwsze wrażenie, jasno pokazać ofertę i zamieniać odwiedzających w klientów.
+              Projektuję nowoczesne strony dla firm, które chcą robić dobre pierwsze wrażenie, jasno pokazać ofertę i zamieniać odwiedzających w klientów.
             </p>
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 animate-fade-up" style={{ animationDelay: "320ms" }}>
               <CTAButton to="/kontakt" fullWidthOnMobile>ZAPYTAJ O WYCENĘ</CTAButton>
