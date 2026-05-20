@@ -83,7 +83,7 @@ const carePlans = [
   },
   {
     name: "Plus",
-    price: "70 zł",
+    price: "80 zł",
     period: "/ miesiąc",
     desc: "Pełna opieka — Ty prowadzisz biznes, ja dbam o stronę.",
     features: ["Wszystko z Priority", "Aktualizacje treści", "Dodawanie zdjęć i galerii", "Zmiany tekstów", "Comiesięczny przegląd"],
