@@ -159,6 +159,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   /* Fluid, scalable root font size — every rem-based unit scales with viewport */
@@ -321,4 +322,51 @@
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
+}
+
+/* Mobile tuning — keep premium look, tone down heavy effects */
+@media (max-width: 640px) {
+  .grid-bg { background-size: 48px 48px; }
+  .aurora { filter: blur(60px); opacity: 0.35; }
+  .reveal { transform: translateY(24px); filter: blur(4px); }
+  .glass { backdrop-filter: blur(16px) saturate(130%); }
+}
+
+/* Mobile-only center-based scroll highlight: the item nearest the viewport
+   center within a [data-proximity-group] receives hover-equivalent styling
+   via data-near="true" set by useProximityHover. */
+@media (hover: none), (max-width: 768px) {
+  [data-proximity-item] {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  [data-proximity-item][data-near="true"] {
+    transform: translateY(-6px);
+    border-color: oklch(0.68 0.27 285 / 0.6);
+    box-shadow: 0 20px 60px -20px oklch(0.6 0.27 285 / 0.45),
+                0 0 0 1px oklch(0.6 0.27 285 / 0.25) inset;
+  }
+  [data-proximity-item][data-near="true"] [data-proximity-glow] {
+    box-shadow: var(--shadow-glow);
+    border-color: oklch(0.6 0.27 285 / 0.5);
+  }
+}
+
+/* Accessible, visible focus state across interactive elements */
+@layer base {
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid oklch(0.78 0.22 275);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-aurora, .animate-glow-pulse, .animate-spin-slow, .animate-shimmer { animation: none !important; }
 }
