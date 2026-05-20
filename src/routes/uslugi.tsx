@@ -78,11 +78,11 @@ function ServicesPage() {
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid md:grid-cols-2 gap-6">
+        <div data-proximity-group className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
-            <div key={s.title} className="group relative glass rounded-3xl p-6 sm:p-8 md:p-10 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={s.title} data-proximity-item className="group relative glass rounded-3xl p-6 sm:p-8 md:p-10 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
               <div className="flex items-start gap-4 sm:gap-5">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
+                <div data-proximity-glow className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
                   <s.icon className="h-6 w-6 text-primary-glow" />
                 </div>
                 <div>

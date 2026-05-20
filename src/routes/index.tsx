@@ -171,14 +171,15 @@ function Index() {
           title={<>Strona, która <span className="text-gradient-primary">pracuje na Twój biznes</span>.</>}
           subtitle="Każdy projekt robię tak, żeby spełniał kilka prostych zasad — bo to one decydują, czy klient u Ciebie zostanie czy ucieknie do konkurencji."
         />
-        <div className="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div data-proximity-group className="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {features.map((f, i) => (
             <div
               key={f.title}
+              data-proximity-item
               className="group relative glass rounded-2xl p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/60 reveal"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center mb-5 group-hover:glow transition-all">
+              <div data-proximity-glow className="w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center mb-5 group-hover:glow transition-all">
                 <f.icon className="h-5 w-5 text-primary-glow" />
               </div>
               <h3 className="text-lg font-semibold mb-2.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{f.title}</h3>
@@ -201,14 +202,15 @@ function Index() {
               <CTAButton to="/kontakt" variant="ghost" fullWidthOnMobile>UMÓW ROZMOWĘ</CTAButton>
             </div>
           </div>
-          <ol className="lg:col-span-8 space-y-3 sm:space-y-4">
+          <ol data-proximity-group className="lg:col-span-8 space-y-3 sm:space-y-4">
             {process.map((p, i) => (
               <li
                 key={p.k}
+                data-proximity-item
                 className="group glass rounded-2xl p-5 sm:p-6 md:p-7 flex items-start gap-4 sm:gap-5 hover:border-primary/50 transition-all reveal"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
+                <div data-proximity-glow className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
                   <p.icon className="h-5 w-5 text-primary-glow" />
                 </div>
                 <div className="flex-1">
@@ -231,10 +233,11 @@ function Index() {
           title={<>Trzy poziomy — wybierasz <span className="text-gradient-primary">to, czego potrzebujesz</span>.</>}
           subtitle="Każdą wycenę robię indywidualnie po krótkiej rozmowie. Poniżej widełki, w których realnie się poruszamy."
         />
-        <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-5">
+        <div data-proximity-group className="mt-10 md:mt-14 grid md:grid-cols-3 gap-5">
           {packages.map((p, i) => (
             <div
               key={p.name}
+              data-proximity-item
               className={`group relative glass rounded-3xl p-6 sm:p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40 ring-1 ring-primary/30" : "hover:border-primary/60"}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
@@ -272,9 +275,9 @@ function Index() {
           title={<>Strona to nie wszystko — <span className="text-gradient-primary">trzeba o nią dbać</span>.</>}
           subtitle="Po wdrożeniu możesz zostać na jednym z planów opieki. Hosting, bezpieczeństwo i drobne zmiany — z głowy."
         />
-        <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-5">
+        <div data-proximity-group className="mt-10 md:mt-14 grid md:grid-cols-3 gap-5">
           {carePlans.map((c, i) => (
-            <div key={c.name} className="glass rounded-3xl p-6 sm:p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={c.name} data-proximity-item className="glass rounded-3xl p-6 sm:p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
               <h3 className="text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.name}</h3>
               <div className="mt-3 flex items-baseline gap-1.5">
                 <span className="text-3xl font-bold text-gradient-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.price}</span>
@@ -311,7 +314,8 @@ function Index() {
                   <Phone className="h-4 w-4 text-primary-glow" /> +48 889 521 418
                 </a>
                 <a href="mailto:kontakt@mativostudio.pl" className="inline-flex items-center gap-2 hover:text-primary transition-colors">
-                  <Mail className="h-4 w-4 text-primary-glow" /> kontakt@mativostudio.pl
+                  <Mail className="h-4 w-4 text-primary-glow" />
+                  <span>kontakt@mativostudio.pl</span>
                 </a>
               </div>
             </div>

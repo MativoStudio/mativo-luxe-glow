@@ -2,10 +2,12 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { Particles } from "./Particles";
 import { useReveal } from "@/hooks/useReveal";
+import { useProximityHover } from "@/hooks/useProximityHover";
 import { useEffect, useState } from "react";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   useReveal();
+  useProximityHover();
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     const onScroll = () => {
