@@ -102,10 +102,11 @@ function PricingPage() {
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="grid md:grid-cols-3 gap-5">
+        <div data-proximity-group className="grid md:grid-cols-3 gap-5">
           {packages.map((p, i) => (
             <div
               key={p.name}
+              data-proximity-item
               className={`group relative glass rounded-3xl p-6 sm:p-7 reveal transition-all hover:-translate-y-1.5 ${p.highlighted ? "lg:scale-[1.03] border-primary/40 ring-1 ring-primary/30" : "hover:border-primary/60"}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
@@ -145,9 +146,9 @@ function PricingPage() {
           title={<>Plany utrzymania <span className="text-gradient-primary">i wsparcia</span>.</>}
           subtitle="Po wdrożeniu możesz zostać pod opieką. Hosting, bezpieczeństwo, drobne zmiany — bez stresu."
         />
-        <div className="mt-10 sm:mt-12 grid md:grid-cols-3 gap-5">
+        <div data-proximity-group className="mt-10 sm:mt-12 grid md:grid-cols-3 gap-5">
           {carePlans.map((c, i) => (
-            <div key={c.name} className="glass rounded-3xl p-6 sm:p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={c.name} data-proximity-item className="glass rounded-3xl p-6 sm:p-7 reveal hover:-translate-y-1.5 hover:border-primary/60 transition-all" style={{ transitionDelay: `${i * 60}ms` }}>
               <h3 className="text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.name}</h3>
               <div className="mt-3 flex items-baseline gap-1.5">
                 <span className="text-3xl font-bold text-gradient-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.price}</span>
