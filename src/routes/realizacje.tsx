@@ -37,9 +37,9 @@ function PortfolioPage() {
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div data-proximity-group className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <a key={p.title} href="#" className="group relative block glass rounded-3xl overflow-hidden hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+            <a key={p.title} href="#" data-proximity-item className="group relative block glass rounded-3xl overflow-hidden hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 70}ms` }}>
               <div className="relative aspect-[4/3] overflow-hidden">
                 <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" style={{ background: p.grad }} />
                 <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 50%)" }} />
