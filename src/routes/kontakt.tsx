@@ -46,7 +46,7 @@ function ContactPage() {
 
       <section className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
-          <div className="lg:col-span-2 space-y-3 sm:space-y-4 order-2 lg:order-1">
+          <div data-proximity-group className="lg:col-span-2 space-y-3 sm:space-y-4 order-2 lg:order-1">
             {[
               { icon: Phone, k: "Telefon", v: "+48 889 521 418", href: "tel:+48889521418" },
               { icon: Mail, k: "Email", v: "kontakt@mativostudio.pl", href: "mailto:kontakt@mativostudio.pl" },
@@ -55,10 +55,11 @@ function ContactPage() {
               <a
                 key={c.k}
                 href={c.href ?? "#"}
+                data-proximity-item
                 className="group glass rounded-2xl p-5 sm:p-6 flex items-center gap-4 sm:gap-5 hover:border-primary/60 transition-all reveal"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
+                <div data-proximity-glow className="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-secondary/60 border border-border flex items-center justify-center group-hover:glow transition-all">
                   <c.icon className="h-5 w-5 text-primary-glow" />
                 </div>
                 <div className="min-w-0">
