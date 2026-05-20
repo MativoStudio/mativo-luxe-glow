@@ -130,13 +130,6 @@ function Index() {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 mb-6 md:mb-8 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass animate-fade-up">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
-                <span className="relative rounded-full h-2 w-2 bg-primary" />
-              </span>
-              <span className="text-[9px] md:text-[10px] font-semibold tracking-[0.25em] md:tracking-[0.3em] text-foreground/80">CZĘSTOCHOWA · POLSKA</span>
-            </div>
             <p className="text-[10px] md:text-xs font-semibold tracking-[0.3em] md:tracking-[0.35em] text-primary mb-4 md:mb-6 animate-fade-up">
               MATIVO STUDIO
             </p>
