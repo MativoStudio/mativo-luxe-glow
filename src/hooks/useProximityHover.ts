@@ -1,16 +1,14 @@
 import { useEffect } from "react";
 
 /**
- * Mobile / touch-only behavior:
- * On devices without hover, finds the card within each [data-proximity-group]
- * that is closest to the vertical center of the viewport and marks it with
- * data-near="true". CSS then mirrors the desktop :hover styling on that card.
+ * Center-based scroll highlight (all devices):
+ * Within each [data-proximity-group], the [data-proximity-item] whose center
+ * is closest to the vertical center of the viewport is marked data-near="true".
+ * CSS then applies the "hover-equivalent" styling to that item as the user scrolls.
  */
 export function useProximityHover() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(hover: none)");
-    if (!mq.matches) return;
 
     let raf = 0;
     const compute = () => {

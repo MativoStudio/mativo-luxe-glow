@@ -332,24 +332,23 @@
   .glass { backdrop-filter: blur(16px) saturate(130%); }
 }
 
-/* Touch / no-hover devices: mirror :hover styling on the card nearest to
-   viewport center (data-near is set by useProximityHover). */
-@media (hover: none) {
-  [data-proximity-item] {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  [data-proximity-item][data-near="true"] {
-    transform: translateY(-6px);
-    border-color: oklch(0.68 0.27 285 / 0.6);
-    box-shadow: 0 20px 60px -20px oklch(0.6 0.27 285 / 0.45),
-                0 0 0 1px oklch(0.6 0.27 285 / 0.25) inset;
-  }
-  [data-proximity-item][data-near="true"] [data-proximity-glow] {
-    box-shadow: var(--shadow-glow);
-    border-color: oklch(0.6 0.27 285 / 0.5);
-  }
+/* Center-based scroll highlight (all devices): the item nearest the
+   viewport center within a [data-proximity-group] receives hover-equivalent
+   styling via data-near="true" set by useProximityHover. */
+[data-proximity-item] {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-proximity-item][data-near="true"] {
+  transform: translateY(-6px);
+  border-color: oklch(0.68 0.27 285 / 0.6);
+  box-shadow: 0 20px 60px -20px oklch(0.6 0.27 285 / 0.45),
+              0 0 0 1px oklch(0.6 0.27 285 / 0.25) inset;
+}
+[data-proximity-item][data-near="true"] [data-proximity-glow] {
+  box-shadow: var(--shadow-glow);
+  border-color: oklch(0.6 0.27 285 / 0.5);
 }
 
 /* Accessible, visible focus state across interactive elements */
