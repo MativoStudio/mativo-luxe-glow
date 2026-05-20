@@ -62,10 +62,10 @@ function AboutPage() {
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div data-proximity-group className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {values.map((v, i) => (
-            <div key={v.k} className="group glass rounded-2xl p-6 sm:p-7 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
-              <div className="w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center mb-5 group-hover:glow transition-all">
+            <div key={v.k} data-proximity-item className="group glass rounded-2xl p-6 sm:p-7 hover:-translate-y-1.5 hover:border-primary/60 transition-all reveal" style={{ transitionDelay: `${i * 60}ms` }}>
+              <div data-proximity-glow className="w-12 h-12 rounded-xl bg-secondary/60 border border-border flex items-center justify-center mb-5 group-hover:glow transition-all">
                 <v.icon className="h-5 w-5 text-primary-glow" />
               </div>
               <h3 className="text-base font-semibold mb-2.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{v.k}</h3>
