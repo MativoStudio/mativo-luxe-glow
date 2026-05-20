@@ -31,8 +31,8 @@ function AboutPage() {
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <SectionHeader
           eyebrow="O STUDIU"
-          title={<>Małe studio webowe — <span className="text-gradient-primary">duża dbałość o szczegóły</span>.</>}
-          subtitle="Mativo Studio to projekt z Częstochowy. Robię strony internetowe dla lokalnych firm i marek osobistych — od salonów beauty po detailing i siłownie."
+          title={<>Małe studio webowe. <span className="text-gradient-primary">Duża dbałość o szczegóły</span>.</>}
+          subtitle="Mativo Studio to projekt z Częstochowy. Robię strony internetowe dla lokalnych firm i marek osobistych, od salonów beauty po detailing i siłownie."
         />
       </section>
 
@@ -44,9 +44,6 @@ function AboutPage() {
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
               Bez korpo-procesu, bez ukrywania kosztów, bez gotowych szablonów. Najpierw krótka rozmowa, potem konkretna wycena. Pracujemy razem nad stylem, treściami i funkcjami, aż strona naprawdę pasuje do Twojego biznesu.
-            </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Skupiam się tylko na stronach internetowych — nie prowadzę reklam, nie ogarniam social mediów, nie projektuję logo. Robię jedną rzecz dobrze.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:gap-5">
